@@ -4,17 +4,20 @@ $(function () {
 
 		  // This is our block helper
 		  // The name of our helper is provided as the first parameter - in this case 'uppercase'
-		  //Handlebars.registerHelper('uppercase', function(options) {
-
-			// "this" is the context that existed when calling the helper.
-
-			// The options object has a special function - fn. This is a
-			// compiled version of the template that is contained between the opening and closing
-			// blocks of this helper. To get a string, call fn with the context:
-
-			//return options.fn(this).toUpperCase();
-
-		  //});
+			Handlebars.registerHelper('grouped_each', function(every, context, options) {
+    		var out = "", subcontext = [], i;
+    			if (context && context.length > 0) {
+        		for (i = 0; i < context.length; i++) {
+            	if (i > 0 && i % every === 0) {
+                out += options.fn(subcontext);
+                subcontext = [];
+            	}
+            subcontext.push(context[i]);
+        	}
+        out += options.fn(subcontext);
+    	}
+    	return out;
+		});
 
 		  // Compile the template
 		  var theTemplate = Handlebars.compile(theTemplateScript);
@@ -22,12 +25,22 @@ $(function () {
 		  // Define our data object
 		  var context = {
 			people: [
-			{ firstName: 'Homer', lastName: 'Simpson'},
-			{ firstName: 'Peter', lastName: 'Griffin'},
-			{ firstName: 'Eric', lastName: 'Cartman'},
-			{ firstName: 'Kenny', lastName: 'McCormick'},
-			{ firstName: 'Bart', lastName: 'Simpson'}
-			]
+				{ imgSRC:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Egyptian_Mau_Bronze.jpg/1200px-Egyptian_Mau_Bronze.jpg',
+					firstName: 'Egyptian',
+					lastName: 'Mau'},
+				{ imgSRC:'https://www.catster.com/wp-content/uploads/2017/09/A-tabby-cat-with-an-ID-collar-on.jpg',
+					firstName: 'Tabby',
+					lastName: 'Cat'},
+				{ imgSRC:'https://cdn3-www.cattime.com/assets/uploads/gallery/siamese-cats-and-kittens-pictures/siamese-cat-kitten-picture-1.jpg',
+					firtName: 'Siamese',
+					lastName: 'Cat'},
+				{ imgSRC:'https://cdn2-www.cattime.com/assets/uploads/gallery/persian-cats-and-kittens/persian-cats-and-kittens-1.jpg',
+					firstName: 'Persian',
+					lastName: 'Cat'},
+				{ imgSRC:'https://d3544la1u8djza.cloudfront.net/APHI/Blog/2016/12_December/what+do+Russian+Blue+cats+look+like+_+cat+resting+on+a+sofa.jpg',
+					firstName: 'Russian Blue',
+					lastName: 'Cat'}
+				]
 		  };
 
 		  // Pass our data to the template

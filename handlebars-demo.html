@@ -2,64 +2,43 @@
 <html lang="en">
 <head>
 	<title>Handlebars Demo</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="testjs.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
+<style>
+
+	p.center {
+		position: absolute;
+		text-align: center;
+
+	}
+</style>
+
 <body>
 	<script id="block-expressions-template" type="text/x-handlebars-template">
+		{{#grouped_each 3 people}}
+			<div class="row">
+				{{#each this}}
+					<div class="col-sm-4 item">
+						<img src="{{imgSRC}}" alt="{{firstName}} {{lastName}}" style="width:250px; height:250px;">
+						<p>{{firstName}} {{lastName}}</p>
+					</div>
+				{{/each}}
+			</div>
+			{{/grouped_each}}
 
-		{{#each people}}
-		
-		<p>{{firstName}} {{lastName}}</p>
-		{{/each}}
+
 	</script>
 
-	<div class="content-placeholder"></div>
-	
-	<!--<script>
-		$(function () {
-		  // Grab the template script
-		  var theTemplateScript = $("#block-expressions-template").html();
 
-		  // This is our block helper
-		  // The name of our helper is provided as the first parameter - in this case 'uppercase'
-		  //Handlebars.registerHelper('uppercase', function(options) {
+		<div class="content-placeholder"></div>
 
-			// "this" is the context that existed when calling the helper.
-
-			// The options object has a special function - fn. This is a
-			// compiled version of the template that is contained between the opening and closing
-			// blocks of this helper. To get a string, call fn with the context:
-
-			//return options.fn(this).toUpperCase();
-
-		  //});
-
-		  // Compile the template
-		  var theTemplate = Handlebars.compile(theTemplateScript);
-
-		  // Define our data object
-		  var context = {
-			people: [
-			{ firstName: 'Homer', lastName: 'Simpson'},
-			{ firstName: 'Peter', lastName: 'Griffin'},
-			{ firstName: 'Eric', lastName: 'Cartman'},
-			{ firstName: 'Kenny', lastName: 'McCormick'},
-			{ firstName: 'Bart', lastName: 'Simpson'}
-			]
-		  };
-
-		  // Pass our data to the template
-		  var theCompiledHtml = theTemplate(context);
-
-		  // Add the compiled html to the page
-		  $('.content-placeholder').html(theCompiledHtml);
-
-		});
-	</script>-->
-	
 	<script src="testjs.js" type="text/javascript" charset="utf-8"></script>
 
 </body>
