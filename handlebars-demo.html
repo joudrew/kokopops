@@ -13,11 +13,41 @@
 
 <style>
 
-	p.center {
-		position: absolute;
+	.text-centered {
 		text-align: center;
+	}
+
+	.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+	}
+
+	.board-member {
+		position: static;
+	}
+
+	.board-member .img-responsive {
+		width: 250px;
+		height: 250px;
+		border-radius: 10px;
+		opacity: 0.5;
+		filter: alpha(opacity=50);
+		margin: 30px auto;
 
 	}
+
+	/*.board-title {
+		position: static;
+    padding: 2px 0px 2px 30%;
+		margin-bottom: 30px;
+    display: inline-block;
+    letter-spacing: 2px;
+    width: 100%;
+	}*/
+
+
 </style>
 
 <body>
@@ -25,15 +55,19 @@
 		{{#grouped_each 3 people}}
 			<div class="row">
 				{{#each this}}
-					<div class="col-sm-4 item">
-						<img src="{{imgSRC}}" alt="{{firstName}} {{lastName}}" style="width:250px; height:250px;">
-						<p>{{firstName}} {{lastName}}</p>
+					<div class="col-md-4 col-sm-4">
+
+						<div class ="board-member">
+							<img src="{{imgSRC}}" alt="{{firstName}} {{lastName}}" class="img-responsive center-block">
+						</div>
+
+						<!--<div class="board-title">
+							<h3>{{firstName}} {{lastName}}</h3>
+						</div>-->
 					</div>
 				{{/each}}
 			</div>
 			{{/grouped_each}}
-
-
 	</script>
 
 
