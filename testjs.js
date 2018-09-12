@@ -27,19 +27,24 @@ $(function () {
 			people: [
 				{ imgSRC:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Egyptian_Mau_Bronze.jpg/1200px-Egyptian_Mau_Bronze.jpg',
 					firstName: 'Egyptian',
-					lastName: 'Mau'},
+					lastName: 'Mau',
+					description: 'test'},
 				{ imgSRC:'https://www.catster.com/wp-content/uploads/2017/09/A-tabby-cat-with-an-ID-collar-on.jpg',
 					firstName: 'Tabby',
-					lastName: 'Cat'},
+					lastName: 'Cat',
+					description: 'test',},
 				{ imgSRC:'https://cdn3-www.cattime.com/assets/uploads/gallery/siamese-cats-and-kittens-pictures/siamese-cat-kitten-picture-1.jpg',
 					firtName: 'Siamese',
-					lastName: 'Cat'},
+					lastName: 'Cat',
+					description: 'test'},
 				{ imgSRC:'https://cdn2-www.cattime.com/assets/uploads/gallery/persian-cats-and-kittens/persian-cats-and-kittens-1.jpg',
 					firstName: 'Persian',
-					lastName: 'Cat'},
+					lastName: 'Cat',
+					description: 'test'},
 				{ imgSRC:'https://d3544la1u8djza.cloudfront.net/APHI/Blog/2016/12_December/what+do+Russian+Blue+cats+look+like+_+cat+resting+on+a+sofa.jpg',
 					firstName: 'Russian Blue',
-					lastName: 'Cat'}
+					lastName: 'Cat',
+					description: 'test'}
 				]
 		  };
 

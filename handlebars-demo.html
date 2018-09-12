@@ -6,13 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"</script>
+	<script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="testjs.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <style>
 
+	.container-fluid {
+		padding: 60px 25%;
+	}
 	.text-centered {
 		text-align: center;
 	}
@@ -25,17 +28,26 @@
 	}
 
 	.board-member {
-		position: static;
+		position: relative;
+
+
+
 	}
 
 	.board-member .img-responsive {
-		width: 250px;
-		height: 250px;
+		width: 300px;
+		height: 300px;
 		border-radius: 10px;
 		opacity: 0.5;
 		filter: alpha(opacity=50);
 		margin: 30px auto;
+		cursor: pointer;
 
+	}
+
+	.img-responsive:hover {
+		opacity: 1.0;
+		filter: alpha(opacity=100);
 	}
 
 	/*.board-title {
@@ -46,6 +58,10 @@
     letter-spacing: 2px;
     width: 100%;
 	}*/
+
+	@media screen and (max-width: 768px) {
+
+	}
 
 
 </style>
@@ -58,22 +74,41 @@
 					<div class="col-md-4 col-sm-4">
 
 						<div class ="board-member">
-							<img src="{{imgSRC}}" alt="{{firstName}} {{lastName}}" class="img-responsive center-block">
-						</div>
+							<!-- image trigger modal-->
+							<img src="{{imgSRC}}" alt="{{firstName}} {{lastName}}" class="img-responsive center-block" data-toggle="modal" data-target="#myModal">
 
-						<!--<div class="board-title">
-							<h3>{{firstName}} {{lastName}}</h3>
-						</div>-->
+							<!-- Modal -->
+						  <div class="modal fade" id="myModal" role="dialog">
+						    <div class="modal-dialog">
+
+						      <!-- Modal content-->
+						      <div class="modal-content">
+						        <div class="modal-header">
+						          <button type="button" class="close" data-dismiss="modal">&times;</button>
+						          <h4 class="modal-title">{{firstName}} {{lastName}}</h4>
+						        </div>
+						        <div class="modal-body">
+						          <p>{{description}}</p>
+						        </div>
+						      </div>
+
+						    </div>
+						  </div>
+							<h4>{{firstName}} {{lastName}}</h4>
+							<p>Cat</p>
+
+						</div>
 					</div>
 				{{/each}}
 			</div>
 			{{/grouped_each}}
 	</script>
 
+		<div class="container-fluid">
+			<div class="content-placeholder"></div>
+		</div>
 
-		<div class="content-placeholder"></div>
 
-	<script src="testjs.js" type="text/javascript" charset="utf-8"></script>
 
 </body>
 
