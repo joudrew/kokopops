@@ -41,7 +41,7 @@
 		border-radius: 10px;
 		opacity: 0.5;
 		filter: alpha(opacity=50);
-		margin: 30px auto;
+		margin: 30px 0;
 		cursor: pointer;
 
 	}
@@ -66,18 +66,13 @@
   	height: 100%;
 	}
 
-
-
-
-
-	/*.board-title {
-		position: static;
-    padding: 2px 0px 2px 30%;
-		margin-bottom: 30px;
+	.board-title {
+		position: relative;
+		margin: 0 auto 30px;
     display: inline-block;
-    letter-spacing: 2px;
-    width: 100%;
-	}*/
+    letter-spacing: 1px;
+    width: 300px;
+	}
 
 
 	}
@@ -114,10 +109,16 @@
 
 							    </div>
 							  </div>
-								<h4>{{firstName}} {{lastName}}</h4>
-								<p>Cat</p>
+
 							</div>
 						</div>
+
+						<!--Board Member Description-->
+						<div class="board-title">
+							<h4>{{firstName}} {{lastName}}</h4>
+							<p>Cat</p>
+						</div>
+
 					</div>
 				{{/each}}
 			</div>
@@ -125,6 +126,7 @@
 	</script>
 
 		<div class="container">
+			<!--Board-->
 			<div class="content-placeholder"></div>
 		</div>
 
