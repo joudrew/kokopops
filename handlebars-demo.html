@@ -13,9 +13,13 @@
 
 <style>
 
-	.container-fluid {
-		padding: 60px 25%;
+	.container {
+		padding-right: 15px;
+		padding-left: 15px;
+		margin-right: auto;
+		margin-left: auto;
 	}
+
 	.text-centered {
 		text-align: center;
 	}
@@ -63,6 +67,9 @@
 	}
 
 
+
+
+
 	/*.board-title {
 		position: static;
     padding: 2px 0px 2px 30%;
@@ -88,7 +95,7 @@
 						<div class ="board-member aspect-ratio-box">
 							<!-- image trigger modal-->
 							<div class="aspect-ratio-box-inside">
-								<img src="{{imgSRC}}" alt="{{firstName}} {{lastName}}" class="img-responsive center-block" data-toggle="modal" data-target="#myModal">
+								<img src="{{imgSRC}}" alt="{{firstName}} {{lastName}}" class="img-responsive" data-toggle="modal" data-target="#myModal">
 
 								<!-- Modal -->
 							  <div class="modal fade" id="myModal" role="dialog">
@@ -117,7 +124,7 @@
 			{{/grouped_each}}
 	</script>
 
-		<div class="container-fluid">
+		<div class="container">
 			<div class="content-placeholder"></div>
 		</div>
 
