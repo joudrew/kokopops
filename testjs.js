@@ -1,6 +1,6 @@
 $(function () {
 		  // Grab the template script
-		  var theTemplateScript = $("#block-expressions-template").html();
+		  var theTemplateScript = $("#board-members-template").html();
 
 		  // This is our block helper
 		  // The name of our helper is provided as the first parameter - in this case 'uppercase'
@@ -28,7 +28,7 @@ $(function () {
 				{ imgSRC:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Egyptian_Mau_Bronze.jpg/1200px-Egyptian_Mau_Bronze.jpg',
 					firstName: 'Egyptian',
 					lastName: 'Mau',
-					description: 'test'},
+					description: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
 				{ imgSRC:'https://www.catster.com/wp-content/uploads/2017/09/A-tabby-cat-with-an-ID-collar-on.jpg',
 					firstName: 'Tabby',
 					lastName: 'Cat',
@@ -52,6 +52,6 @@ $(function () {
 		  var theCompiledHtml = theTemplate(context);
 
 		  // Add the compiled html to the page
-		  $('.content-placeholder').html(theCompiledHtml);
+		  $('.board-members-profile').html(theCompiledHtml);
 
 	});

@@ -12,21 +12,31 @@
 </head>
 
 <style>
+	body {
+		font: 400 15px Lato, sans-serif;
+		line-height: 1.8;
+		color: #303030;
+		background-color: #f6f6f6;
+	}
+
 	.container {
 		padding-right: 15px;
 		padding-left: 15px;
 		margin-right: auto;
 		margin-left: auto;
 	}
-	.text-centered {
-		text-align: center;
+
+	h2.description {
+		font-size: 40px;
+		font-style: italic;
+		text-transform: uppercase;
+		color: #c6f1d6;
+		letter-spacing: 1.5px;
+		border-bottom: 2px solid rgba(0, 0, 0,0.1);
+		padding-bottom: 5px;
 	}
-	.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-	}
+
+	/* Board Member Styling*/
 	.board-member {
 		margin-top: 25px;
 	}
@@ -60,7 +70,7 @@
 	}
 	.text {
 	  color: white;
-	  font-size: 20px;
+		font-size: 14px;
 	  position: absolute;
 	  top: 50%;
 	  left: 50%;
@@ -75,12 +85,25 @@
     letter-spacing: 1px;
     width: 100%;
 	}
+
+	.board-title h4 {
+		display: block;
+		margin-bottom: 0;
+		text-transform: uppercase;
+	}
+
+	.board-title span {
+		font-size: 14px;
+		font-style: oblique;
+		letter-spacing: 1px;
+	}
 </style>
 
 <body>
-	<script id="block-expressions-template" type="text/x-handlebars-template">
+	<script id="board-members-template" type="text/x-handlebars-template">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="col-lg-12">
+				<h2 class="description">Board Members</h2>
 				<div class="row">
 					{{#grouped_each 3 people}}
 					{{#each this}}
@@ -88,12 +111,12 @@
 							<div class="img-box">
 								<img src="{{imgSRC}}" alt="{{firstName}} {{lastName}}" class="img-responsive">
 								<div class="overlay">
-									<div class="text">Overlay Text</div>
+									<div class="text">{{description}}</div>
 								</div>
 							</div>
 							<div class="board-title">
-								<h2>{{firstName}} {{lastName}}</h2>
-								<p>{{description}}</p>
+								<h4>{{firstName}} {{lastName}}</h4>
+								<span>placeholder</span>
 							</div>
 						</div>
 
@@ -107,7 +130,7 @@
 
 		<div class="container">
 			<!--Board-->
-			<div class="content-placeholder"></div>
+			<div class="board-members-profile"></div>
 		</div>
 
 
