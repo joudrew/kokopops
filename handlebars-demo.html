@@ -4,10 +4,12 @@
 	<title>Handlebars Demo</title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="testjs.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
@@ -29,6 +31,7 @@
 	h2.description {
 		font-size: 40px;
 		font-style: italic;
+		font-weight: 400;
 		text-transform: uppercase;
 		color: #c6f1d6;
 		letter-spacing: 1.5px;
@@ -48,6 +51,7 @@
 		width: 300px;
 		height: 300px;
 		border-radius: 5px;
+		margin: 0 auto;
 	}
 	.overlay {
 		position: absolute;
@@ -61,6 +65,7 @@
   	height:0;
   	transition: .5s ease;
 		display: inline-block;
+		margin: 0 auto;
 	}
 
 	.img-box:hover .overlay{
@@ -75,10 +80,12 @@
 	  position: absolute;
 	  top: 50%;
 	  left: 50%;
+		width: 100%;
 	  -webkit-transform: translate(-50%, -50%);
 	  -ms-transform: translate(-50%, -50%);
 	  transform: translate(-50%, -50%);
 	  text-align: center;
+		padding: 0 2vw;
 	}
 
 	.board-title {
@@ -86,6 +93,7 @@
     display: inline-block;
     letter-spacing: 1px;
     width: 100%;
+		margin: 0 auto;
 	}
 
 	.board-title h4 {
@@ -98,6 +106,34 @@
 		font-size: 14px;
 		font-style: oblique;
 		letter-spacing: 1.5px;
+	}
+
+	@media only screen and (max-width: 1024px) {
+
+		.img-box .img-responsive {
+			width: 200px;
+			height: 200px;
+		}
+
+		.overlay {
+			max-width: 200px;
+		}
+
+	}
+
+	@media only screen and (max-width: 768px) {
+		h2.description {
+			font-size: 20px;
+		}
+
+		.text {
+			font-size: 11px;
+		}
+
+		.board-title {
+			font-size: 12px;
+			text-align: center;
+		}
 	}
 </style>
 
