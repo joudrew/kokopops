@@ -47,7 +47,7 @@
 		display: block;
 		position: relative;
 	}
-	.img-box .img-responsive {
+	.board-member .img-box .img-responsive {
 		width: 300px;
 		height: 300px;
 		border-radius: 5px;
@@ -108,6 +108,22 @@
 		letter-spacing: 1.5px;
 	}
 
+	/* Team Member Styling */
+	.team-member {
+		margin-top: 25px;
+	}
+	.team-member .img-box {
+		display: block;
+		position: relative;
+	}
+	.team-member .img-box .img-responsive {
+		width: 150px;
+		height: 150px;
+		border-radius: 5px;
+		margin: 0 auto;
+	}
+
+
 	@media only screen and (max-width: 1024px) {
 
 		.img-box .img-responsive {
@@ -138,12 +154,13 @@
 </style>
 
 <body>
+	<!-- Board Members Template -->
 	<script id="board-members-template" type="text/x-handlebars-template">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="col-lg-12">
 				<h2 class="description">Board Members</h2>
 				<div class="row">
-					{{#grouped_each 3 people}}
+					{{#grouped_each 3 board}}
 					{{#each this}}
 						<div class="col-md-4 col-sm-4 board-member">
 							<div class="img-box">
@@ -168,10 +185,37 @@
 			</div>
 		</div>
 	</script>
+	<!-- Board members Template End-->
+
+	<!-- Team Members Template -->
+	<script id="team-members-template" type="text/x-handlebars-template">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="col-lg-12">
+				<h2 class="description">Meet the team!</h2>
+				<div class="row">
+						{{#grouped_each 6 team}}
+						{{#each this}}
+					<div class="col-lg-2 col-sm-2 col-xs-2 team-member">
+						<div class="img-box">
+							<img src="{{imgSRC}}" alt="{{firstName}} {{lastName}}" class="img-responsive">
+						</div>
+					</div>
+					{{/each}}
+					{{/grouped_each}}
+
+
+				</div>
+			</div>
+		</div>
+	</script>
 
 		<div class="container">
 			<!--Board-->
 			<div class="board-members-profile"></div>
+
+			<!--Team-->
+			<div class="team-members-profile">
+			</div>
 		</div>
 
 

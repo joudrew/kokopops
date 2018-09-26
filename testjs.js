@@ -1,6 +1,7 @@
 $(function () {
 		  // Grab the template script
-		  var theTemplateScript = $("#board-members-template").html();
+		  var boardtmpscript = $("#board-members-template").html();
+			var teamtmpscript = $("#team-members-template").html();
 
 		  // This is our block helper
 		  // The name of our helper is provided as the first parameter - in this case 'uppercase'
@@ -20,7 +21,7 @@ $(function () {
 		});
 
 		  // Compile the template
-		  var theTemplate = Handlebars.compile(theTemplateScript);
+		  var boardtmp = Handlebars.compile(boardtmpscript);
 
 		  // Define our data object
 		  var context = {};
@@ -28,15 +29,27 @@ $(function () {
 				function(data){
 					console.log(data);
 					context = data;
-					var theCompiledHtml = theTemplate(context);
-					$('.board-members-profile').html(theCompiledHtml);
+
+					// Pass our data to the template
+					var boardhtml = boardtmp(context);
+
+					// Add the compiled html to the page
+					$('.board-members-profile').html(boardhtml);
 				}
 			)
 
-		  // Pass our data to the template
-		  // var theCompiledHtml = theTemplate(context);
+			var teamtmp = Handlebars.compile(teamtmpscript);
+			var tcontext= {};
+			$.getJSON('team18data.json', {format: "json"}).done(
+				function(data){
+					console.log(data);
+					tcontext = data;
 
-		  // Add the compiled html to the page
-		  // $('.board-members-profile').html(theCompiledHtml);
+					// Pass our data to the template
+					var teamhtml = teamtmp(tcontext);
 
+					// Add the compiled html to the page
+					$('.team-members-profile').html(teamhtml);
+				}
+			)
 	});
