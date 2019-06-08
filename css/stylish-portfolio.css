@@ -378,10 +378,18 @@ a:hover, a:focus, a:active {
 
 /* Carousel */
 .carousel-item {
-  max-height: 200px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.carousel-caption {
+  background-color: transparent;
+  max-width: 550px;
+  padding: 0 20px;
+  margin: 0 auto;
+  margin-top: 200px;
+  text-align: center;
 }
